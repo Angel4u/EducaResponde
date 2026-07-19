@@ -3,10 +3,41 @@ import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setLoading(true); // Bloquea el botón para evitar doble clic
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      area: formData.get("area"),
+      message: formData.get("message"),
+    };
+
+    try {
+      // Laragon asocia automáticamente tu carpeta a un dominio .test
+      const response = await fetch("http://educaresponde.test/educaresponde-react/procesar_contacto.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSent(true);
+      } else {
+        alert("El servidor rechazó la solicitud. Revisa los datos.");
+      }
+    } catch (error) {
+      console.error("Error de conexión:", error);
+      alert("Error de conexión. Asegúrate de tener Laragon encendido (Start All).");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -76,8 +107,12 @@ export function Contact() {
                 <label htmlFor="message" className="mb-2 block text-base font-semibold text-foreground">Mensaje (opcional)</label>
                 <textarea id="message" name="message" rows={4} className="w-full rounded-md border border-input bg-background px-4 py-3 text-base text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Cuéntenos brevemente sobre su establecimiento" />
               </div>
-              <button type="submit" className="w-full rounded-md bg-primary px-6 py-4 text-base font-bold text-primary-foreground transition-colors hover:brightness-110 md:text-lg">
-                Enviar solicitud
+              <button 
+                type="submit" 
+                disabled={loading}
+                className={`w-full rounded-md px-6 py-4 text-base font-bold text-primary-foreground transition-colors md:text-lg ${loading ? 'bg-primary/70 cursor-not-allowed' : 'bg-primary hover:brightness-110'}`}
+              >
+                {loading ? 'Enviando de forma segura...' : 'Enviar solicitud'}
               </button>
               <p className="text-center text-sm text-muted-foreground">Sus datos son confidenciales y no serán compartidos con terceros.</p>
             </form>
