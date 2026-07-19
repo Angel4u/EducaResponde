@@ -1,6 +1,8 @@
+// Asegúrate de que los nombres de los archivos coincidan con los que tienes en tu carpeta
+import { Header } from './components/landing/Header'; // Puede que el tuyo se llame Navbar.tsx
 import { Hero } from './components/landing/Hero';
 import { TrustBadges } from './components/landing/TrustBadges';
-// import { Services } from './components/landing/Services'; // Descomenta esta línea si tienes el componente de los 3 pilares guardado así
+import { Services } from './components/landing/Services'; // Este es el componente de los 3 pilares
 import { Projects } from './components/landing/Projects';
 import { Contact } from './components/landing/Contact';
 import { Footer } from './components/landing/Footer';
@@ -9,13 +11,15 @@ import { WhatsAppFAB } from './components/landing/WhatsAppFAB';
 function App() {
   return (
     <div className="flex min-h-screen flex-col">
-      {/* Si tienes un componente Header/Navbar, impórtalo y colócalo aquí arriba */}
+      {/* Aquí entra tu menú de navegación superior con los links a la U virtual */}
+      <Header /> 
       
       <main className="flex-1">
         <Hero />
         <TrustBadges />
         
-        {/* <Services /> Descomenta esta línea para mostrar los servicios */}
+        {/* Aquí entran tus 3 pilares de servicios */}
+        <Services /> 
         
         <Projects />
         <Contact />
