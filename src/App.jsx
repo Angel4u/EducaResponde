@@ -1,5 +1,5 @@
 // Asegúrate de que los nombres de los archivos coincidan con los que tienes en tu carpeta
-import { Header } from './components/landing/Header'; // Puede que el tuyo se llame Navbar.tsx
+import { Navbar } from './components/landing/Navbar'; // Puede que el tuyo se llame Navbar.tsx
 import { Hero } from './components/landing/Hero';
 import { TrustBadges } from './components/landing/TrustBadges';
 import { Services } from './components/landing/Services'; // Este es el componente de los 3 pilares
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Aquí entra tu menú de navegación superior con los links a la U virtual */}
-      <Header /> 
+      <Navbar /> 
       
       <main className="flex-1">
         <Hero />
