@@ -52,7 +52,7 @@ export function Projects() {
   }, [currentIndex]); // Se reinicia el contador si el usuario hace clic manualmente
 
   return (
-    <section className="bg-slate-50 py-20 md:py-28">
+    <section id="proyectos" className="bg-slate-50 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         
         {/* Encabezado */}
