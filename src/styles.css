@@ -1,10 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Mantén esto igual */
+@import "tailwindcss";
 @import "tw-animate-css";
+
 @custom-variant dark (&:is(.dark *));
+
+/* A partir de aquí mantén todo tu @theme inline y tus variables :root y .dark... */
 
 /* Conserva aquí tu @theme inline y todas tus variables :root y .dark usando el formato oklch que ya tenías... */
 
