@@ -38,7 +38,7 @@ export function Navbar() {
           ))}
           {/* Botón Aula Virtual - Redirige a Moodle en Laragon */}
           <a
-            href="http://localhost/moodle"
+            href="http://moodle.test"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md border-2 border-primary px-4 py-2 text-base font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
