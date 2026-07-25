@@ -57,10 +57,12 @@ export function Projects() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         
         <div className="mb-12 text-left">
-          <span className="text-sm font-bold uppercase tracking-widest text-slate-500">
+          {/* Cambiado a text-black */}
+          <span className="text-sm font-bold uppercase tracking-widest text-black">
             Proyectos Destacados
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold text-slate-900 md:text-5xl">
+          {/* Cambiado a text-black */}
+          <h2 className="mt-3 text-3xl font-extrabold text-black md:text-5xl">
             Resultados verificables en <br className="hidden md:block" />
             establecimientos educacionales
           </h2>
@@ -76,32 +78,37 @@ export function Projects() {
               }`}
             >
               <div className="mb-6 inline-flex">
-                <span className="rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-sm font-semibold uppercase text-slate-700 shadow-sm">
+                {/* Cambiado a text-black */}
+                <span className="rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-sm font-semibold uppercase text-black shadow-sm">
                   {proyectosDestacados[currentIndex].categoria}
                 </span>
               </div>
               
-              <h3 className="mb-6 text-2xl font-bold leading-tight text-slate-900 md:text-4xl">
+              {/* Cambiado a text-black */}
+              <h3 className="mb-6 text-2xl font-bold leading-tight text-black md:text-4xl">
                 {proyectosDestacados[currentIndex].titulo}
               </h3>
               
-              <p className="max-w-3xl text-lg leading-relaxed text-slate-600 md:text-2xl">
+              {/* Cambiado a text-black */}
+              <p className="max-w-3xl text-lg leading-relaxed text-black md:text-2xl">
                 {proyectosDestacados[currentIndex].descripcion}
               </p>
             </div>
           </div>
 
+          {/* Flecha izquierda: texto/icono cambiado a text-black */}
           <button 
             onClick={prevSlide}
-            className="absolute -left-4 top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-slate-100 bg-white text-slate-800 shadow-lg transition-transform hover:scale-105 hover:bg-slate-50 md:-left-7"
+            className="absolute -left-4 top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-slate-100 bg-white text-black shadow-lg transition-transform hover:scale-105 hover:bg-slate-50 md:-left-7"
             aria-label="Proyecto anterior"
           >
             <ChevronLeft size={32} />
           </button>
           
+          {/* Flecha derecha: texto/icono cambiado a text-black */}
           <button 
             onClick={nextSlide}
-            className="absolute -right-4 top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-slate-100 bg-white text-slate-800 shadow-lg transition-transform hover:scale-105 hover:bg-slate-50 md:-right-7"
+            className="absolute -right-4 top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-slate-100 bg-white text-black shadow-lg transition-transform hover:scale-105 hover:bg-slate-50 md:-right-7"
             aria-label="Siguiente proyecto"
           >
             <ChevronRight size={32} />
@@ -112,9 +119,10 @@ export function Projects() {
               <button
                 key={index}
                 onClick={() => changeSlide(index)}
+                /* El punto activo ahora es bg-black en lugar de slate-800 */
                 className={`h-3 w-3 rounded-full transition-all duration-300 ${
                   currentIndex === index 
-                    ? "w-8 bg-slate-800" 
+                    ? "w-8 bg-black" 
                     : "bg-slate-300 hover:bg-slate-400"
                 }`}
                 aria-label={`Ir al proyecto ${index + 1}`}

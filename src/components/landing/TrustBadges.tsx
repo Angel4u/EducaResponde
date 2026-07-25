@@ -16,7 +16,7 @@ export function TrustBadges() {
           {badges.map((b) => (
             <div key={b.name} className="flex flex-col items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-6 text-center shadow-sm transition-shadow hover:shadow-md">
               <span className="text-xl font-bold text-slate-900">{b.name}</span>
-              <span className="mt-2 text-xs font-medium text-slate-500">{b.sub}</span>
+              <span className="mt-2 text-xs font-medium text-slate-700">{b.sub}</span>
             </div>
           ))}
         </div>

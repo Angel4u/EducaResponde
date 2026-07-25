@@ -7,23 +7,28 @@ html {
 
 @custom-variant dark (&:is(.dark *));
 
-/* A partir de aquí conservas tu @theme inline y todas tus variables de colores oklch exactamente como las tenías */
-@custom-variant dark (&:is(.dark *));
-
-/* Conserva aquí tu @theme inline y tus variables de :root y .dark usando el formato oklch... */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
+  /* Variables base de tu template */
+  --bg: #ffffff;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  
+  /* --- PALETA EDUCARESPONDE --- */
+  /* Azul marino profundo (el de tu Footer) */
+  --primary: 222.2 47.4% 11.2%; 
+  /* Texto claro que va encima del azul marino */
+  --primary-foreground: 210 40% 98%; 
+  
+  /* Colores de texto generales */
+  --text: #171717; /* Reemplazamos el gris por azul muy oscuro */
+  --text-h: 222.2 47.4% 11.2%;
+  
+  /* Color de los bordes de tus tarjetas */
+  --border: 214.3 31.8% 91.4%; 
 
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  /* Tipografías */
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -31,7 +36,7 @@ html {
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
+  color: hsl(var(--text));
   background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -45,17 +50,12 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --bg: 222.2 84% 4.9%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --text: #171717;
+    --text-h: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
   }
 
   #social .button-icon {
@@ -63,6 +63,7 @@ html {
   }
 }
 
+/* El resto de tu CSS (body, #root, h1, h2, p) se mantiene exactamente igual */
 body {
   margin: 0;
 }
@@ -72,7 +73,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  /* border-inline: 1px solid hsl(var(--border)); <- Opcional: quita este borde si te restringe el ancho total de la landing */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -83,7 +84,7 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: hsl(var(--text-h));
 }
 
 h1 {
@@ -113,7 +114,7 @@ code,
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
-  color: var(--text-h);
+  color: hsl(var(--text-h));
 }
 
 code {

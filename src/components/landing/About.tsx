@@ -2,22 +2,22 @@ import { CheckCircle2 } from "lucide-react";
 
 const team = [
   {
-    name: "Angel", // Puedes poner tu apellido aquí
+    name: "Alexander Eastman",
     role: "Director Ejecutivo",
     bio: "Especialista en gestión escolar y liderazgo de proyectos educativos de alto impacto.",
-    imageUrl: "https://ui-avatars.com/api/?name=Angel&background=0f172a&color=fff&size=256", // Reemplaza con la ruta de tu foto real ej: "/images/angel.jpg"
+    imageUrl: "https://ui-avatars.com/api/?name=Alexander+Eastman&background=000000&color=fff&size=256", 
   },
   {
     name: "Nombre del Asesor",
     role: "Jefe de Capacitaciones UTP",
     bio: "Docente con más de 15 años de experiencia en currículum y evaluación SENCE.",
-    imageUrl: "https://ui-avatars.com/api/?name=Asesor+UTP&background=e2e8f0&color=0f172a&size=256",
+    imageUrl: "https://ui-avatars.com/api/?name=Asesor+UTP&background=e2e8f0&color=000000&size=256",
   },
   {
     name: "Nombre del Especialista",
     role: "Encargado de Licitaciones",
     bio: "Experto en Mercado Público, fondos FAEP y normativas del MINEDUC.",
-    imageUrl: "https://ui-avatars.com/api/?name=Especialista&background=e2e8f0&color=0f172a&size=256",
+    imageUrl: "https://ui-avatars.com/api/?name=Especialista&background=e2e8f0&color=000000&size=256",
   }
 ];
 
@@ -30,17 +30,21 @@ export function About() {
           
           {/* Texto de Quiénes Somos */}
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-500">
+            {/* Cambiado a text-black */}
+            <span className="text-xs font-bold uppercase tracking-widest text-black">
               Quiénes Somos
             </span>
-            <h2 className="mt-4 text-3xl font-extrabold text-slate-900 md:text-4xl">
+            {/* Cambiado a text-black */}
+            <h2 className="mt-4 text-3xl font-extrabold text-black md:text-4xl">
               Expertos comprometidos con la educación chilena
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-slate-600">
+            {/* Cambiado a text-black */}
+            <p className="mt-6 text-lg leading-relaxed text-black">
               En EducaResponde no somos solo consultores; somos un equipo multidisciplinario de profesionales de la educación, arquitectos y gestores públicos que entienden la realidad de las escuelas desde adentro.
             </p>
             
-            <ul className="mt-8 space-y-4 text-base text-slate-700">
+            {/* Cambiado a text-black */}
+            <ul className="mt-8 space-y-4 text-base text-black">
               <li className="flex items-center gap-3">
                 <CheckCircle2 className="h-6 w-6 text-yellow-500" />
                 <span>Registrados y validados por <strong>MINEDUC y SENCE</strong></span>
@@ -61,16 +65,19 @@ export function About() {
             {team.map((member, index) => (
               <div 
                 key={member.name} 
-                className={`flex flex-col items-center text-center rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md ${index === 0 ? "sm:col-span-2 lg:col-span-2 bg-slate-50" : ""}`}
+                /* Borde negro puro aplicado aquí también */
+                className={`flex flex-col items-center text-center rounded-2xl border border-black p-6 shadow-sm transition-all hover:shadow-md ${index === 0 ? "sm:col-span-2 lg:col-span-2 bg-slate-50" : "bg-white"}`}
               >
                 <img 
                   src={member.imageUrl} 
                   alt={`Fotografía de ${member.name}`} 
                   className="h-24 w-24 rounded-full object-cover shadow-inner mb-4"
                 />
-                <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
+                {/* Cambiado a text-black */}
+                <h3 className="text-xl font-bold text-black">{member.name}</h3>
                 <p className="text-xs font-bold uppercase text-yellow-600 mt-1">{member.role}</p>
-                <p className="mt-3 text-sm text-slate-600 leading-relaxed max-w-sm">
+                {/* Cambiado a text-black */}
+                <p className="mt-3 text-sm text-black leading-relaxed max-w-sm">
                   {member.bio}
                 </p>
               </div>

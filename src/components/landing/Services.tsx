@@ -26,11 +26,14 @@ export function Services() {
     <section id="servicios" className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-24">
         <div className="max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-slate-900">Servicios a Colegios</span>
-          <h2 className="mt-4 text-3xl font-extrabold text-slate-900 md:text-4xl lg:text-5xl">
+          {/* Cambiado a text-black */}
+          <span className="text-xs font-bold uppercase tracking-widest text-black">Servicios a Colegios</span>
+          {/* Cambiado a text-black */}
+          <h2 className="mt-4 text-3xl font-extrabold text-black md:text-4xl lg:text-5xl">
             Tres pilares para fortalecer su establecimiento
           </h2>
-          <p className="mt-6 text-lg text-slate-600">
+          {/* Cambiado a text-black */}
+          <p className="mt-6 text-lg text-black">
             Servicios diseñados para instituciones educacionales que buscan resultados medibles, cumplimiento normativo y crecimiento sostenido.
           </p>
         </div>
@@ -39,25 +42,31 @@ export function Services() {
           {services.map((s) => {
             const Icon = s.icon;
             return (
-              <article key={s.title} className="flex flex-col rounded-2xl border border-slate-900 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                {/* Cuadro del icono en azul oscuro */}
-                <span className="grid h-16 w-16 place-items-center rounded-xl bg-slate-900 text-white">
+              /* Borde negro puro */
+              <article key={s.title} className="flex flex-col rounded-2xl border border-black bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                {/* Cuadro del icono en negro */}
+                <span className="grid h-16 w-16 place-items-center rounded-xl bg-black text-white">
                   <Icon className="h-8 w-8" />
                 </span>
                 
-                <h3 className="mt-8 text-2xl font-bold leading-tight text-slate-900">{s.title}</h3>
-                <p className="mt-4 text-base leading-relaxed text-slate-600">{s.description}</p>
+                {/* Título en negro puro */}
+                <h3 className="mt-8 text-2xl font-bold leading-tight text-black">{s.title}</h3>
                 
-                <ul className="mt-6 flex-1 space-y-3 text-sm text-slate-600">
+                {/* Descripción en negro puro */}
+                <p className="mt-4 text-base leading-relaxed text-black">{s.description}</p>
+                
+                {/* Viñetas en negro puro */}
+                <ul className="mt-6 flex-1 space-y-3 text-sm text-black">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-3">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-900" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black" />
                       {b}
                     </li>
                   ))}
                 </ul>
                 
-                <a href="#contacto" className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:underline">
+                {/* Enlace en negro puro */}
+                <a href="#contacto" className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-black hover:underline">
                   Solicitar información <ArrowRight className="h-4 w-4" />
                 </a>
               </article>

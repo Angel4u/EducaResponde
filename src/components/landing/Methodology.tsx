@@ -33,13 +33,16 @@ export function Methodology() {
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-24">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-slate-500">
+          {/* Cambiado a text-black */}
+          <span className="text-xs font-bold uppercase tracking-widest text-black">
             Nuestra Metodología
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold text-slate-900 md:text-4xl">
+          {/* Cambiado a text-black */}
+          <h2 className="mt-4 text-3xl font-extrabold text-black md:text-4xl">
             Un proceso claro orientado a resultados
           </h2>
-          <p className="mt-6 text-lg text-slate-600">
+          {/* Cambiado a text-black */}
+          <p className="mt-6 text-lg text-black">
             Trabajamos mano a mano con su equipo directivo a través de un sistema probado en más de 120 colegios a lo largo de Chile.
           </p>
         </div>
@@ -54,13 +57,16 @@ export function Methodology() {
               <article key={step.number} className="relative z-10 flex flex-col items-center text-center">
                 <div className="relative flex h-24 w-24 items-center justify-center rounded-full border-4 border-white bg-slate-900 text-white shadow-xl">
                   <Icon className="h-10 w-10 text-yellow-400" />
-                  <span className="absolute -bottom-3 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-slate-900 shadow-md">
+                  {/* Cambiado a text-black */}
+                  <span className="absolute -bottom-3 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-black shadow-md">
                     {step.number}
                   </span>
                 </div>
                 
-                <h3 className="mt-8 text-xl font-bold text-slate-900">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                {/* Cambiado a text-black */}
+                <h3 className="mt-8 text-xl font-bold text-black">{step.title}</h3>
+                {/* Cambiado a text-black */}
+                <p className="mt-3 text-sm leading-relaxed text-black">
                   {step.description}
                 </p>
               </article>
