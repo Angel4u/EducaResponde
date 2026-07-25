@@ -4,6 +4,8 @@ import { Hero } from './components/landing/Hero';
 import { TrustBadges } from './components/landing/TrustBadges';
 import { Services } from './components/landing/Services'; // Este es el componente de los 3 pilares
 import { Projects } from './components/landing/Projects';
+import { Methodology } from './components/landing/Methodology'; // <-- NUEVO
+import { About } from './components/landing/About';             // <-- NUEVO
 import { Contact } from './components/landing/Contact';
 import { Footer } from './components/landing/Footer';
 import { WhatsAppFAB } from './components/landing/WhatsAppFAB';
@@ -22,6 +24,8 @@ function App() {
         <Services /> 
         
         <Projects />
+        <Methodology />
+        <About />
         <Contact />
       </main>
       
