@@ -4,69 +4,69 @@ const steps = [
   {
     number: "01",
     icon: Search,
-    title: "Diagnóstico Gratuito",
-    description: "Evaluamos las necesidades específicas de su establecimiento y analizamos las oportunidades de mejora o financiamiento disponibles.",
+    title: "Diagnóstico Institucional",
+    description:
+      "Evaluamos sin costo las necesidades de su establecimiento, brechas del PME y oportunidades de financiamiento (SEP, SENCE, FAEP/FIE).",
   },
   {
     number: "02",
     icon: FileSignature,
-    title: "Propuesta a Medida",
-    description: "Diseñamos un plan de acción detallado, ya sea para capacitación docente, postulación a fondos o proyectos de infraestructura.",
+    title: "Propuesta Técnica y OC",
+    description:
+      "Diseñamos un plan de trabajo a medida con objetivos verificables, cronograma anual y gestión ágil mediante Orden de Compra o Mercado Público.",
   },
   {
     number: "03",
     icon: Wrench,
-    title: "Ejecución Ágil",
-    description: "Implementamos el proyecto con un equipo de expertos, asegurando el cumplimiento de la normativa del MINEDUC y los plazos acordados.",
+    title: "Ejecución & Aula Moodle",
+    description:
+      "Implementamos la capacitación o proyecto técnico habilitando accesos individuales en nuestra Aula Virtual Moodle y cumpliendo la normativa MINEDUC.",
   },
   {
     number: "04",
     icon: Users,
-    title: "Acompañamiento",
-    description: "No lo dejamos solo. Realizamos seguimiento post-servicio para garantizar resultados sostenibles y el éxito de la comunidad educativa.",
-  }
+    title: "Certificación y Reportes",
+    description:
+      "Entregamos informes ejecutivos de asistencia, calificaciones, diplomas certificados SENCE/CPEIP y respaldo completo para rendición de cuentas.",
+  },
 ];
 
 export function Methodology() {
   return (
-    <section id="metodologia" className="bg-slate-50">
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-24">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          {/* Cambiado a text-black */}
-          <span className="text-xs font-bold uppercase tracking-widest text-black">
-            Nuestra Metodología
+    <section id="metodologia" className="bg-white py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="inline-block rounded-full bg-yellow-500/15 px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-900">
+            Nuestra Metodología de Trabajo
           </span>
-          {/* Cambiado a text-black */}
-          <h2 className="mt-4 text-3xl font-extrabold text-black md:text-4xl">
-            Un proceso claro orientado a resultados
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+            Un proceso estructurado orientado a resultados y cumplimiento
           </h2>
-          {/* Cambiado a text-black */}
-          <p className="mt-6 text-lg text-black">
-            Trabajamos mano a mano con su equipo directivo a través de un sistema probado en más de 120 colegios a lo largo de Chile.
+          <p className="mt-4 text-lg text-slate-600">
+            Trabajamos codo a codo con Sostenedores, Directores y Jefes UTP mediante un protocolo probado en más de 120 establecimientos a lo largo de Chile.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 relative">
-          {/* Línea conectora (visible solo en escritorio) */}
-          <div className="hidden lg:block absolute top-12 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-slate-200 z-0"></div>
-          
+        <div className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {/* Línea conectora escritorio */}
+          <div className="pointer-events-none absolute top-12 left-1/2 hidden h-[2px] w-3/4 -translate-x-1/2 bg-slate-200 lg:block" />
+
           {steps.map((step) => {
             const Icon = step.icon;
             return (
-              <article key={step.number} className="relative z-10 flex flex-col items-center text-center">
-                <div className="relative flex h-24 w-24 items-center justify-center rounded-full border-4 border-white bg-slate-900 text-white shadow-xl">
-                  <Icon className="h-10 w-10 text-yellow-400" />
-                  {/* Cambiado a text-black */}
-                  <span className="absolute -bottom-3 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-black shadow-md">
+              <article
+                key={step.number}
+                className="group relative z-10 flex flex-col items-center rounded-2xl border border-slate-200 bg-slate-50/60 p-6 text-center shadow-xs transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg"
+              >
+                <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border-4 border-white bg-slate-900 text-white shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <Icon className="h-9 w-9 text-yellow-400" />
+                  <span className="absolute -right-2 -bottom-2 flex h-7 w-7 items-center justify-center rounded-full bg-yellow-500 text-xs font-extrabold text-slate-900 shadow-xs">
                     {step.number}
                   </span>
                 </div>
-                
-                {/* Cambiado a text-black */}
-                <h3 className="mt-8 text-xl font-bold text-black">{step.title}</h3>
-                {/* Cambiado a text-black */}
-                <p className="mt-3 text-sm leading-relaxed text-black">
+
+                <h3 className="mt-6 text-lg font-bold text-slate-900">{step.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
                   {step.description}
                 </p>
               </article>

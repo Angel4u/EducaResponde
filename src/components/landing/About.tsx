@@ -1,89 +1,138 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ShieldCheck, GraduationCap, Briefcase } from "lucide-react";
 
+/**
+ * EQUIPO DIRECTIVO Y ESPECIALISTAS
+ * Puedes editar fácilmente los nombres, cargos, credenciales, biografías e imágenes aquí:
+ */
 const team = [
   {
     name: "Alexander Eastman",
-    role: "Director Ejecutivo",
-    bio: "Especialista en gestión escolar y liderazgo de proyectos educativos de alto impacto.",
-    imageUrl: "https://ui-avatars.com/api/?name=Alexander+Eastman&background=000000&color=fff&size=256", 
+    role: "Director Ejecutivo & Fundador",
+    credential: "Dirección Estratégica Educacional",
+    bio: "Especialista en gestión escolar, articulación de recursos públicos y liderazgo de proyectos educativos de alto impacto para sostenedores y colegios en Chile.",
+    imageUrl:
+      "https://ui-avatars.com/api/?name=Alexander+Eastman&background=0f172a&color=facc15&size=256&bold=true",
+    featured: true,
   },
   {
-    name: "Nombre del Asesor",
-    role: "Jefe de Capacitaciones UTP",
-    bio: "Docente con más de 15 años de experiencia en currículum y evaluación SENCE.",
-    imageUrl: "https://ui-avatars.com/api/?name=Asesor+UTP&background=e2e8f0&color=000000&size=256",
+    // Reemplazar con el nombre real del Jefe UTP
+    name: "Dirección Académica UTP",
+    role: "Jefatura de Capacitaciones OTEC",
+    credential: "Especialista en Currículum & SENCE",
+    bio: "Más de 15 años liderando diseño instruccional, evaluación formativa basada en datos y programas certificados SENCE/CPEIP en Aula Virtual Moodle.",
+    imageUrl:
+      "https://ui-avatars.com/api/?name=Direccion+UTP&background=f1f5f9&color=0f172a&size=256&bold=true",
+    featured: false,
   },
   {
-    name: "Nombre del Especialista",
-    role: "Encargado de Licitaciones",
-    bio: "Experto en Mercado Público, fondos FAEP y normativas del MINEDUC.",
-    imageUrl: "https://ui-avatars.com/api/?name=Especialista&background=e2e8f0&color=000000&size=256",
-  }
+    // Reemplazar con el nombre real del Especialista en Licitaciones
+    name: "Coordinación de Proyectos Públicos",
+    role: "Especialista en Licitaciones e Infraestructura",
+    credential: "Experto Mercado Público & MINEDUC",
+    bio: "Consultor senior en formulación técnica de proyectos FAEP/FIE, compras públicas ChileCompra y cumplimiento normativo de infraestructura escolar.",
+    imageUrl:
+      "https://ui-avatars.com/api/?name=Proyectos+Publicos&background=f1f5f9&color=0f172a&size=256&bold=true",
+    featured: false,
+  },
 ];
 
 export function About() {
   return (
-    <section id="nosotros" className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-24">
-        
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-          
-          {/* Texto de Quiénes Somos */}
+    <section id="nosotros" className="border-t border-slate-200 bg-slate-50/60 py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-center">
+          {/* Columna Izquierda: Propuesta de Valor Institucional */}
           <div>
-            {/* Cambiado a text-black */}
-            <span className="text-xs font-bold uppercase tracking-widest text-black">
+            <span className="inline-block rounded-full bg-yellow-500/15 px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-900">
               Quiénes Somos
             </span>
-            {/* Cambiado a text-black */}
-            <h2 className="mt-4 text-3xl font-extrabold text-black md:text-4xl">
-              Expertos comprometidos con la educación chilena
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+              Especialistas comprometidos con la excelencia de la educación chilena
             </h2>
-            {/* Cambiado a text-black */}
-            <p className="mt-6 text-lg leading-relaxed text-black">
-              En EducaResponde no somos solo consultores; somos un equipo multidisciplinario de profesionales de la educación, arquitectos y gestores públicos que entienden la realidad de las escuelas desde adentro.
+            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              En <strong className="font-bold text-slate-900">EducaResponde</strong> integramos consultoría estratégica, organismo técnico de capacitación (OTEC) e ingeniería escolar. Nuestro equipo multidisciplinario de docentes, gestores públicos y arquitectos conoce desde adentro los desafíos de dirigir un colegio.
             </p>
-            
-            {/* Cambiado a text-black */}
-            <ul className="mt-8 space-y-4 text-base text-black">
-              <li className="flex items-center gap-3">
-                <CheckCircle2 className="h-6 w-6 text-yellow-500" />
-                <span>Registrados y validados por <strong>MINEDUC y SENCE</strong></span>
+
+            <ul className="mt-8 space-y-4 text-base text-slate-700">
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-yellow-500" />
+                <span>
+                  Programas y procedimientos alineados con exigencias de{" "}
+                  <strong className="font-bold text-slate-900">MINEDUC, SENCE y Superintendencia de Educación</strong>.
+                </span>
               </li>
-              <li className="flex items-center gap-3">
-                <CheckCircle2 className="h-6 w-6 text-yellow-500" />
-                <span>Trato directo, transparente y sin burocracia</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-yellow-500" />
+                <span>
+                  Trato ejecutivo directo, transparente y acompañado de documentación lista para auditorías y rendición SEP/FAEP.
+                </span>
               </li>
-              <li className="flex items-center gap-3">
-                <CheckCircle2 className="h-6 w-6 text-yellow-500" />
-                <span>Soluciones 100% adaptadas a su Proyecto Educativo (PEI)</span>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-yellow-500" />
+                <span>
+                  Soluciones 100% adaptadas al Proyecto Educativo Institucional (PEI) y Plan de Mejoramiento Educativo (PME) de su colegio.
+                </span>
               </li>
             </ul>
-          </div>
 
-          {/* Tarjetas del Equipo */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-            {team.map((member, index) => (
-              <div 
-                key={member.name} 
-                /* Borde negro puro aplicado aquí también */
-                className={`flex flex-col items-center text-center rounded-2xl border border-black p-6 shadow-sm transition-all hover:shadow-md ${index === 0 ? "sm:col-span-2 lg:col-span-2 bg-slate-50" : "bg-white"}`}
-              >
-                <img 
-                  src={member.imageUrl} 
-                  alt={`Fotografía de ${member.name}`} 
-                  className="h-24 w-24 rounded-full object-cover shadow-inner mb-4"
-                />
-                {/* Cambiado a text-black */}
-                <h3 className="text-xl font-bold text-black">{member.name}</h3>
-                <p className="text-xs font-bold uppercase text-yellow-600 mt-1">{member.role}</p>
-                {/* Cambiado a text-black */}
-                <p className="mt-3 text-sm text-black leading-relaxed max-w-sm">
-                  {member.bio}
+            <div className="mt-8 flex flex-wrap items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xs">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-slate-900 text-yellow-400">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-slate-900">
+                  Garantía de Cumplimiento Técnico y Pedagógico
+                </p>
+                <p className="text-xs text-slate-600">
+                  Cada programa incluye soporte dedicado para Directores, Jefes UTP y docentes participantes.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Columna Derecha: Tarjetas Ejecutivas del Equipo */}
+          <div className="grid gap-6 sm:grid-cols-2">
+            {team.map((member) => (
+              <article
+                key={member.name}
+                className={`group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl ${
+                  member.featured ? "sm:col-span-2" : ""
+                }`}
+              >
+                <div
+                  className={`flex flex-col gap-5 ${
+                    member.featured ? "sm:flex-row sm:items-center" : "items-start"
+                  }`}
+                >
+                  <img
+                    src={member.imageUrl}
+                    alt={`Retrato ejecutivo de ${member.name}`}
+                    className="h-20 w-20 shrink-0 rounded-2xl border-2 border-slate-100 object-cover shadow-sm"
+                  />
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-700">
+                      {member.featured ? (
+                        <Briefcase className="h-3.5 w-3.5 text-yellow-600" />
+                      ) : (
+                        <GraduationCap className="h-3.5 w-3.5 text-yellow-600" />
+                      )}
+                      {member.credential}
+                    </div>
+                    <h3 className="mt-2 text-xl font-extrabold text-slate-900">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-bold uppercase tracking-wider text-yellow-600">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="mt-4 border-t border-slate-100 pt-4 text-sm leading-relaxed text-slate-600">
+                  {member.bio}
+                </p>
+              </article>
             ))}
           </div>
-          
         </div>
       </div>
     </section>
