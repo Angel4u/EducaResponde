@@ -27,6 +27,7 @@ interface RolPlataforma {
   rolTag: string;
   subtitulo: string;
   preguntaIngreso: string;
+  rolBoton: string;
   titulo: string;
   descripcion: string;
   funcionalidades: string[];
@@ -44,6 +45,7 @@ const rolesPlataforma: RolPlataforma[] = [
     rolTag: "PERFIL 01 · ROL PROFESOR(A)",
     subtitulo: "Aula Virtual Moodle + Material Digital de Clases",
     preguntaIngreso: "¿Eres Profesor(a)?",
+    rolBoton: "Profesor(a)",
     titulo: "Capacitaciones CPA, Certificaciones por Horas y Clases Listas para el Aula",
     descripcion:
       "Al ingresar con su perfil docente, el profesor accede en Moodle a sus cursos de capacitación y Comunidades Profesionales de Aprendizaje (CPA) con todos sus módulos, clases, evaluaciones y certificados con horas cronológicas. Además, dispone de un banco de material digital adquirido por la escuela para construir sus clases.",
@@ -78,7 +80,8 @@ const rolesPlataforma: RolPlataforma[] = [
     id: 2,
     rolTag: "PERFIL 02 · ROL DIRECTIVA / JEFE UTP",
     subtitulo: "Buscador de Dictámenes + Modelo de Gestión Directiva",
-    preguntaIngreso: "¿Eres de la Directiva o Jefe UTP?",
+    preguntaIngreso: "¿Eres Directivo o Jefe UTP?",
+    rolBoton: "Directivo / Jefe UTP",
     titulo: "Buscador de Política Regulatoria, Modelos Base y Evidencias PME al Día",
     descripcion:
       "Una plataforma diseñada exclusivamente para capacitar y acompañar a Directores, Jefes UTP, Curriculistas, Evaluadores y Jefes de Departamento. Integra un buscador informativo de dictámenes, ordinarios y decretos junto con un Modelo de Gestión lleno de insumos y modelos base listos para aplicar.",
@@ -114,6 +117,7 @@ const rolesPlataforma: RolPlataforma[] = [
     rolTag: "PERFIL 03 · ROL ESTUDIANTE",
     subtitulo: "Evaluaciones Externas (SIMCE / DIA) + Aula Tipo Classroom",
     preguntaIngreso: "¿Eres Estudiante?",
+    rolBoton: "Estudiante",
     titulo: "Seguimiento de Desempeño SIMCE/DIA, Plan Lector y Clases Semanales",
     descripcion:
       "Las y los estudiantes acceden a una interfaz clara tipo Classroom donde visualizan sus módulos de clase semanales asignados por sus profesores, rinden evaluaciones diagnósticas y formativas, participan en el Plan Lector y revisan la evolución de su desempeño.",
@@ -283,7 +287,7 @@ export function Projects({ setView }: ProjectsProps) {
                   rel="noopener noreferrer"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-500 px-4 py-3 text-xs font-extrabold uppercase tracking-wider text-slate-900 transition-colors hover:bg-yellow-400"
                 >
-                  <span>Ingresar como {rolActual.preguntaIngreso.replace(/[¿?]/g, "")}</span>
+                  <span>Ingresar como {rolActual.rolBoton}</span>
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
 

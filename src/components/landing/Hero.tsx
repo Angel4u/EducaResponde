@@ -58,18 +58,18 @@ export function Hero({ setView = () => {} }: HeroProps) {
                 setView("cursos");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded-xl bg-yellow-500 px-7 py-4 text-base font-bold text-slate-900 shadow-lg shadow-yellow-500/20 transition-all hover:-translate-y-0.5 hover:bg-yellow-400 md:text-lg"
+              className="inline-flex cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap rounded-xl bg-yellow-500 px-6 py-4 text-base font-bold text-slate-900 shadow-lg shadow-yellow-500/20 transition-all hover:-translate-y-0.5 hover:bg-yellow-400"
             >
-              <BookOpenText className="h-5 w-5" />
-              Ver Capacitaciones y Módulos CPA
+              <BookOpenText className="h-5 w-5 shrink-0" />
+              <span>Ver Capacitaciones CPA</span>
             </button>
 
             <a
               href="#servicios"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-600 bg-slate-800/70 px-6 py-4 text-base font-bold text-white shadow-sm backdrop-blur-xs transition-all hover:-translate-y-0.5 hover:border-yellow-400/70 hover:bg-slate-800 md:text-lg"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-slate-600 bg-slate-800/70 px-6 py-4 text-base font-bold text-white shadow-sm backdrop-blur-xs transition-all hover:-translate-y-0.5 hover:border-yellow-400/70 hover:bg-slate-800"
             >
-              <span>Conocer los 4 Focos de Trabajo</span>
-              <ArrowRight className="h-5 w-5 text-yellow-400" />
+              <span>Ver los 4 Focos de Trabajo</span>
+              <ArrowRight className="h-5 w-5 shrink-0 text-yellow-400" />
             </a>
           </div>
 
