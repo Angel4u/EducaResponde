@@ -1,34 +1,34 @@
-import { ShieldCheck, Award, Landmark, CheckCircle2 } from "lucide-react";
+import { GraduationCap, BarChart3, Scale, Sparkles } from "lucide-react";
 
 const badges = [
   {
-    name: "SENCE",
-    sub: "Organismo Técnico de Capacitación (OTEC)",
-    icon: Award,
+    name: "Plataforma CPA (Moodle)",
+    sub: "Comunidades Profesionales de Aprendizaje y Certificación por Horas",
+    icon: GraduationCap,
   },
   {
-    name: "Ley SEP / PME",
-    sub: "Programas Alineados a Mejoramiento Escolar",
-    icon: ShieldCheck,
+    name: "Sistema DIA & SIMCE",
+    sub: "Ensayos Físicos, Lector Óptico, Niveles de Logro, IDPS y Cobertura",
+    icon: BarChart3,
   },
   {
-    name: "Mercado Público",
-    sub: "Proveedor Habilitado del Estado (ChileCompra)",
-    icon: Landmark,
+    name: "Modelo de Gestión UTP",
+    sub: "Buscador de Dictámenes, Carta Gantt, Actas y Evidencias PME al Día",
+    icon: Scale,
   },
   {
-    name: "Normativa MINEDUC",
-    sub: "Estándares CPEIP e Infraestructura Escolar",
-    icon: CheckCircle2,
+    name: "Innovación & Laboratorios",
+    sub: "STEM, ABP, Robótica, Socioemocional, Ludotecas y Bibliorecreos",
+    icon: Sparkles,
   },
 ];
 
 export function TrustBadges() {
   return (
-    <section aria-label="Acreditaciones y Respaldo" className="border-b border-slate-200 bg-slate-50/70">
+    <section aria-label="Ejes Estratégicos EducaResponde" className="border-b border-slate-200 bg-slate-50/80">
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-8">
         <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-500">
-          Respaldo Institucional, Normativa y Registros Oficiales
+          Los 4 Pilares del Ecosistema y Brochure Institucional EducaResponde
         </p>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {badges.map((b) => {
@@ -43,7 +43,9 @@ export function TrustBadges() {
                 </span>
                 <div>
                   <div className="text-base font-extrabold text-slate-900">{b.name}</div>
-                  <div className="mt-0.5 text-xs font-medium text-slate-600 leading-snug">{b.sub}</div>
+                  <div className="mt-0.5 text-xs font-medium text-slate-600 leading-snug">
+                    {b.sub}
+                  </div>
                 </div>
               </div>
             );

@@ -28,7 +28,7 @@ function Index() {
             <Hero setView={setView} />
             <TrustBadges />
             <Services setView={setView} />
-            <Projects />
+            <Projects setView={setView} />
             <Methodology />
             <About />
             <Contact />

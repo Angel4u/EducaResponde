@@ -54,12 +54,10 @@ export function Contact() {
           body: JSON.stringify(payload),
         });
       } else {
-        // Simulación de latencia de red para feedback visual limpio en Vercel / Local / Demo
         await new Promise((resolve) => setTimeout(resolve, 650));
       }
       setSubmittedData(payload);
     } catch {
-      // Incluso si el endpoint PHP local no responde, confirmamos en interfaz y habilitamos canal directo
       setSubmittedData(payload);
     } finally {
       setLoading(false);
@@ -67,7 +65,7 @@ export function Contact() {
   }
 
   const getWhatsAppFollowUpUrl = (data: SubmittedPayload) => {
-    const text = `Hola EducaResponde, acabo de enviar una solicitud web (Folio ${data.folio}).\n\n• *Nombre:* ${data.name} (${data.cargo})\n• *Establecimiento:* ${data.colegio}\n• *Área:* ${data.area}\n• *Correo:* ${data.email}\n• *Mensaje:* ${data.message || "Solicitud de diagnóstico y cotización"}`;
+    const text = `Hola EducaResponde, acabo de enviar una solicitud web (Folio ${data.folio}).\n\n• *Nombre:* ${data.name} (${data.cargo})\n• *Establecimiento:* ${data.colegio}\n• *Foco / Módulo:* ${data.area}\n• *Correo:* ${data.email}\n• *Mensaje:* ${data.message || "Solicitud de presentación y propuesta anual"}`;
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
   };
 
@@ -77,13 +75,13 @@ export function Contact() {
         {/* Columna Izquierda: Información de Contacto Institucional */}
         <div>
           <span className="inline-block rounded-full bg-yellow-500/15 px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-900">
-            Atención a Establecimientos
+            Diseño Estratégico de Planes Anuales
           </span>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-            Conversemos sobre las metas y proyectos de su colegio
+            Implementemos EducaResponde en su comunidad educativa
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            Un consultor senior especializado en gestión escolar, fondos públicos o capacitación SENCE/SEP le responderá en menos de 24 horas hábiles.
+            Agende una reunión con nuestro equipo especialista para configurar los módulos de capacitación CPA en Moodle, el calendario anual de ensayos SIMCE/DIA, el Modelo de Gestión UTP o los Laboratorios Interactivos en su colegio.
           </p>
 
           <div className="mt-8 space-y-4">
@@ -93,7 +91,7 @@ export function Contact() {
               </span>
               <div>
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Mesa Central &amp; WhatsApp B2B
+                  Atención a Directores, UTP y Sostenedores
                 </div>
                 <div className="mt-0.5 text-base font-bold text-slate-900">+56 2 2345 6789</div>
                 <div className="text-xs text-slate-600">Lunes a Viernes · 08:30 a 18:30 hrs</div>
@@ -106,10 +104,12 @@ export function Contact() {
               </span>
               <div>
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Correo Institucional &amp; Licitaciones
+                  Correo Institucional &amp; Convenios PME / SEP
                 </div>
                 <div className="mt-0.5 text-base font-bold text-slate-900">{CONTACT_EMAIL}</div>
-                <div className="text-xs text-slate-600">Recepción de Órdenes de Compra y solicitudes SEP/SENCE</div>
+                <div className="text-xs text-slate-600">
+                  Solicitud de Brochure Comercial, Órdenes de Compra y habilitación Moodle
+                </div>
               </div>
             </div>
 
@@ -119,20 +119,20 @@ export function Contact() {
               </span>
               <div>
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Oficina Central &amp; Cobertura
+                  Cobertura Presencial y Digital
                 </div>
                 <div className="mt-0.5 text-base font-bold text-slate-900">
-                  Av. Providencia 1234, Of. 501, Santiago
+                  Santiago &amp; Establecimientos en todo Chile
                 </div>
                 <div className="text-xs text-slate-600">
-                  Cobertura nacional presencial y Aula Virtual Moodle en todo Chile
+                  Acompañamiento presencial de especialistas, ensayos físicos SIMCE y Aula Moodle 24/7
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Columna Derecha: Tarjeta de Formulario B2B con Sombras Suaves */}
+        {/* Columna Derecha: Tarjeta de Formulario B2B */}
         <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:shadow-xl md:p-10">
           {submittedData ? (
             <div className="py-6 text-center">
@@ -147,25 +147,24 @@ export function Contact() {
               </h3>
               <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-slate-600">
                 Hemos recibido los antecedentes de{" "}
-                <strong className="text-slate-900">{submittedData.colegio}</strong>. Un consultor senior contactará a{" "}
+                <strong className="text-slate-900">{submittedData.colegio}</strong>. Un especialista de EducaResponde contactará a{" "}
                 <strong className="text-slate-900">{submittedData.name}</strong> dentro de las próximas 24 horas hábiles.
               </p>
 
-              {/* Resumen de la solicitud */}
-              <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4 text-left text-xs text-slate-700 space-y-1.5">
+              <div className="mt-6 space-y-1.5 rounded-xl border border-slate-200 bg-slate-50 p-4 text-left text-xs text-slate-700">
                 <div className="flex justify-between">
                   <span className="font-semibold text-slate-500">Establecimiento:</span>
                   <span className="font-bold text-slate-900">{submittedData.colegio}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-semibold text-slate-500">Solicitante / Cargo:</span>
+                  <span className="font-semibold text-slate-500">Solicitante / Rol:</span>
                   <span className="font-bold text-slate-900">
                     {submittedData.name} ({submittedData.cargo})
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-semibold text-slate-500">Línea de Servicio:</span>
-                  <span className="font-bold text-slate-900 uppercase">{submittedData.area}</span>
+                  <span className="font-semibold text-slate-500">Foco / Programa:</span>
+                  <span className="font-bold text-slate-900">{submittedData.area}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-semibold text-slate-500">Correo de contacto:</span>
@@ -197,10 +196,10 @@ export function Contact() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="border-b border-slate-100 pb-4">
                 <h3 className="text-xl font-extrabold text-slate-900">
-                  Solicitar Diagnóstico o Cotización Formal
+                  Solicitar Presentación, Brochure o Propuesta Anual
                 </h3>
                 <p className="mt-1 text-sm text-slate-600">
-                  Complete los datos de su establecimiento para recibir una propuesta técnica y económica.
+                  Seleccione el foco o módulo de interés para su establecimiento educacional.
                 </p>
               </div>
 
@@ -220,20 +219,20 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="cargo" className="mb-1.5 block text-sm font-bold text-slate-800">
-                    Cargo en el Establecimiento *
+                    Rol en el Establecimiento *
                   </label>
                   <select
                     id="cargo"
                     name="cargo"
                     required
-                    defaultValue="Director(a)"
+                    defaultValue="Jefe(a) UTP / Curriculista"
                     className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all focus:border-slate-900 focus:bg-white focus:ring-2 focus:ring-yellow-500/25"
                   >
-                    <option value="Director(a)">Director(a) / Rector(a)</option>
-                    <option value="Jefe(a) UTP">Jefe(a) de UTP / Coordinador(a)</option>
-                    <option value="Sostenedor(a)">Sostenedor(a) / Representante Legal</option>
-                    <option value="Administrador(a) / DAEM">Encargado(a) de Compras / DAEM / SLEP</option>
-                    <option value="Otro Cargo Directivo">Otro Cargo Directivo</option>
+                    <option value="Director(a) / Rector(a)">Director(a) / Rector(a)</option>
+                    <option value="Jefe(a) UTP / Curriculista">Jefe(a) de UTP / Curriculista</option>
+                    <option value="Evaluador(a) / Jefe(a) de Depto.">Evaluador(a) / Jefe(a) de Departamento</option>
+                    <option value="Sostenedor(a) / DAEM / SLEP">Sostenedor(a) / DAEM / SLEP</option>
+                    <option value="Encargado(a) Convivencia / PIE">Encargado(a) de Convivencia / PIE</option>
                   </select>
                 </div>
               </div>
@@ -241,7 +240,7 @@ export function Contact() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label htmlFor="colegio" className="mb-1.5 block text-sm font-bold text-slate-800">
-                    Colegio / Institución (o RBD) *
+                    Colegio / Establecimiento *
                   </label>
                   <div className="relative">
                     <Building2 className="pointer-events-none absolute top-3.5 left-3.5 h-4 w-4 text-slate-400" />
@@ -257,7 +256,7 @@ export function Contact() {
 
                 <div>
                   <label htmlFor="phone" className="mb-1.5 block text-sm font-bold text-slate-800">
-                    Teléfono / Celular directo *
+                    Teléfono / WhatsApp directo *
                   </label>
                   <input
                     id="phone"
@@ -281,13 +280,13 @@ export function Contact() {
                     name="email"
                     required
                     className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all focus:border-slate-900 focus:bg-white focus:ring-2 focus:ring-yellow-500/25"
-                    placeholder="direccion@sucolegio.cl"
+                    placeholder="utp@sucolegio.cl"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="area" className="mb-1.5 block text-sm font-bold text-slate-800">
-                    Área de interés prioritaria *
+                    Foco o Plataforma de interés *
                   </label>
                   <select
                     id="area"
@@ -297,19 +296,25 @@ export function Contact() {
                     className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all focus:border-slate-900 focus:bg-white focus:ring-2 focus:ring-yellow-500/25"
                   >
                     <option value="" disabled>
-                      Seleccione un servicio…
+                      Seleccione un foco o módulo…
                     </option>
-                    <option value="Capacitación Docente SENCE / SEP">
-                      Capacitación Docente y UTP (SENCE / SEP)
+                    <option value="Foco 1: Capacitación Docente CPA (Aula Moodle) y Gestión UTP">
+                      Foco 1: Capacitación Docente CPA (Moodle) y Modelo UTP
                     </option>
-                    <option value="Asesoría en Licitaciones y Fondos">
-                      Asesoría en Licitaciones y Fondos MINEDUC
+                    <option value="Foco 2: Evaluaciones Externas (Ensayos SIMCE, DIA y Syscol)">
+                      Foco 2: Evaluaciones Externas (SIMCE, DIA, Syscol y Cobertura)
                     </option>
-                    <option value="Proyectos de Infraestructura Escolar">
-                      Proyectos de Construcción e Infraestructura
+                    <option value="Foco 3: Gestión Normativa (Decreto 67, RICE, Protocolos e Inclusión)">
+                      Foco 3: Gestión Normativa (Decreto 67, RICE, Dictámenes y PIE)
                     </option>
-                    <option value="Plan Anual Integral 2026">
-                      Plan Anual de Fortalecimiento Institucional
+                    <option value="Foco 4: Innovación STEM, ABP, Robótica y Recreos Interactivos">
+                      Foco 4: Innovación STEM, ABP, Robótica y Recreos Interactivos
+                    </option>
+                    <option value="Módulos: Socioemocional, Ludotecas/Bibliorecreos o Laboratorios">
+                      Módulos: Socioemocional, Ludotecas/Bibliorecreos o Laboratorios
+                    </option>
+                    <option value="Plan Anual Integral EducaResponde (4 Dimensiones)">
+                      Plan Anual Integral EducaResponde (4 Dimensiones)
                     </option>
                   </select>
                 </div>
@@ -317,14 +322,14 @@ export function Contact() {
 
               <div>
                 <label htmlFor="message" className="mb-1.5 block text-sm font-bold text-slate-800">
-                  Requerimiento o cantidad estimada de docentes (opcional)
+                  Detalles de su requerimiento o cantidad de docentes/estudiantes (opcional)
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={3}
                   className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all focus:border-slate-900 focus:bg-white focus:ring-2 focus:ring-yellow-500/25"
-                  placeholder="Indíquenos brevemente sus objetivos, fechas estimadas o si requiere cotización para Orden de Compra SEP/SENCE..."
+                  placeholder="Cuéntenos qué focos busca priorizar en su Plan Anual o PME (ej. capacitación CPA en Moodle, ensayos SIMCE, modelo de evidencias UTP, laboratorios interactivos)..."
                 />
               </div>
 
@@ -339,13 +344,13 @@ export function Contact() {
                 <span>
                   {loading
                     ? "Procesando solicitud institucional..."
-                    : "Enviar Solicitud de Asesoría / Cotización"}
+                    : "Solicitar Propuesta y Brochure EducaResponde"}
                 </span>
               </button>
 
               <p className="flex items-center justify-center gap-1.5 text-center text-xs text-slate-500">
                 <Clock className="h-3.5 w-3.5 text-yellow-600" />
-                <span>Respuesta garantizada en menos de 24h hábiles · Confidencialidad B2B</span>
+                <span>Respuesta en menos de 24h hábiles · Acompañamiento en las 4 dimensiones educativas</span>
               </p>
             </form>
           )}

@@ -1,37 +1,35 @@
 import { CheckCircle2, ShieldCheck, GraduationCap, Briefcase } from "lucide-react";
 
 /**
- * EQUIPO DIRECTIVO Y ESPECIALISTAS
+ * EQUIPO DIRECTIVO Y ESPECIALISTAS EDUCARESPONDE
  * Puedes editar fácilmente los nombres, cargos, credenciales, biografías e imágenes aquí:
  */
 const team = [
   {
-    name: "Alexander Eastman",
-    role: "Director Ejecutivo & Fundador",
-    credential: "Dirección Estratégica Educacional",
-    bio: "Especialista en gestión escolar, articulación de recursos públicos y liderazgo de proyectos educativos de alto impacto para sostenedores y colegios en Chile.",
+    name: "Dirección General & Gestión Institucional",
+    role: "Liderazgo Estratégico, Modelo UTP y Normativa",
+    credential: "Especialista en Gestión Escolar, PME y Decreto 67",
+    bio: "Lidera el diseño estratégico de planes anuales, Comunidades Profesionales de Aprendizaje (CPA), modelos de gestión para Jefes UTP (Carta Gantt, doble calendario, protocolos de repitencia, RICE y carpeta de evidencias PME / Deprov / Superintendencia).",
     imageUrl:
-      "https://ui-avatars.com/api/?name=Alexander+Eastman&background=0f172a&color=facc15&size=256&bold=true",
+      "https://ui-avatars.com/api/?name=Direccion+Academica&background=0f172a&color=facc15&size=256&bold=true",
     featured: true,
   },
   {
-    // Reemplazar con el nombre real del Jefe UTP
-    name: "Dirección Académica UTP",
-    role: "Jefatura de Capacitaciones OTEC",
-    credential: "Especialista en Currículum & SENCE",
-    bio: "Más de 15 años liderando diseño instruccional, evaluación formativa basada en datos y programas certificados SENCE/CPEIP en Aula Virtual Moodle.",
+    name: "Angel Eastman",
+    role: "Coordinación de Plataforma Moodle & Analítica Educativa",
+    credential: "Especialista en Aula Virtual CPA y Sistema Syscol",
+    bio: "Encargado de la plataforma de capacitaciones Moodle, analítica de evaluaciones externas (DIA y ensayos SIMCE), lectura óptica, monitoreo de niveles de logro (Insuficiente, Elemental y Adecuado) y cobertura curricular.",
     imageUrl:
-      "https://ui-avatars.com/api/?name=Direccion+UTP&background=f1f5f9&color=0f172a&size=256&bold=true",
+      "https://ui-avatars.com/api/?name=Angel+Eastman&background=f1f5f9&color=0f172a&size=256&bold=true",
     featured: false,
   },
   {
-    // Reemplazar con el nombre real del Especialista en Licitaciones
-    name: "Coordinación de Proyectos Públicos",
-    role: "Especialista en Licitaciones e Infraestructura",
-    credential: "Experto Mercado Público & MINEDUC",
-    bio: "Consultor senior en formulación técnica de proyectos FAEP/FIE, compras públicas ChileCompra y cumplimiento normativo de infraestructura escolar.",
+    name: "Equipo de Innovación, STEM y Fomento Lector",
+    role: "Especialistas en Metodologías Activas y Laboratorios",
+    credential: "STEM · ABP · Socioemocional · Ludotecas",
+    bio: "Equipo multidisciplinario a cargo de los laboratorios interactivos en colegios (Teatro, Música, Periodismo, Ciencias y STEM), robótica escolar, recreos interactivos, aprendizaje socioemocional y bibliorecreos.",
     imageUrl:
-      "https://ui-avatars.com/api/?name=Proyectos+Publicos&background=f1f5f9&color=0f172a&size=256&bold=true",
+      "https://ui-avatars.com/api/?name=Equipo+Innovacion&background=f1f5f9&color=0f172a&size=256&bold=true",
     featured: false,
   },
 ];
@@ -41,36 +39,38 @@ export function About() {
     <section id="nosotros" className="border-t border-slate-200 bg-slate-50/60 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-center">
-          {/* Columna Izquierda: Propuesta de Valor Institucional */}
+          {/* Columna Izquierda: Visión y Propuesta de EducaResponde */}
           <div>
             <span className="inline-block rounded-full bg-yellow-500/15 px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-slate-900">
               Quiénes Somos
             </span>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-              Especialistas comprometidos con la excelencia de la educación chilena
+              Una solución integral para las necesidades emergentes del sistema educativo
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-600">
-              En <strong className="font-bold text-slate-900">EducaResponde</strong> integramos consultoría estratégica, organismo técnico de capacitación (OTEC) e ingeniería escolar. Nuestro equipo multidisciplinario de docentes, gestores públicos y arquitectos conoce desde adentro los desafíos de dirigir un colegio.
+              En <strong className="font-bold text-slate-900">EducaResponde</strong> trabajamos las cuatro dimensiones educativas de la gestión institucional. No sólo entregamos teoría: acompañamos en el aula y en la dirección con modelos base listos para aplicar, especialistas en evaluación externa y experiencias vivenciales para toda la comunidad escolar.
             </p>
 
             <ul className="mt-8 space-y-4 text-base text-slate-700">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-yellow-500" />
                 <span>
-                  Programas y procedimientos alineados con exigencias de{" "}
-                  <strong className="font-bold text-slate-900">MINEDUC, SENCE y Superintendencia de Educación</strong>.
+                  <strong className="font-bold text-slate-900">Fortalecimiento del Núcleo Pedagógico:</strong>{" "}
+                  Comunidades Profesionales de Aprendizaje (CPA) orientadas a lograr aprendizajes profundos e inclusivos.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-yellow-500" />
                 <span>
-                  Trato ejecutivo directo, transparente y acompañado de documentación lista para auditorías y rendición SEP/FAEP.
+                  <strong className="font-bold text-slate-900">Acompañamiento de Especialistas en Aula:</strong>{" "}
+                  Docentes expertos en evaluaciones externas (DIA/SIMCE) que guían la implementación y la <em>Restitución del Saber</em>.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-yellow-500" />
                 <span>
-                  Soluciones 100% adaptadas al Proyecto Educativo Institucional (PEI) y Plan de Mejoramiento Educativo (PME) de su colegio.
+                  <strong className="font-bold text-slate-900">Vinculación con el Medio y Proyectos:</strong>{" "}
+                  Articulación con la sociedad, la industria y la educación terciaria mediante Consejos Asesores y postulación estructurada a proyectos.
                 </span>
               </li>
             </ul>
@@ -81,10 +81,10 @@ export function About() {
               </div>
               <div>
                 <p className="text-sm font-bold text-slate-900">
-                  Garantía de Cumplimiento Técnico y Pedagógico
+                  Insumos y Modelos Base 100% Aplicables desde el Primer Día
                 </p>
                 <p className="text-xs text-slate-600">
-                  Cada programa incluye soporte dedicado para Directores, Jefes UTP y docentes participantes.
+                  Carta Gantt anual, doble calendario de pruebas, protocolos normativos, actas de toma de decisiones y paquetes de clases.
                 </p>
               </div>
             </div>

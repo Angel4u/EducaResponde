@@ -26,19 +26,19 @@ export function Footer({ setView }: FooterProps) {
                   Educa<span className="font-normal text-slate-300">Responde</span>
                 </span>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-yellow-400">
-                  Consultora &amp; OTEC B2B
+                  4 Dimensiones de Gestión Escolar
                 </p>
               </div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Soluciones integrales para Directores, Jefes UTP y Sostenedores en Chile: capacitación docente SENCE/CPEIP, fondos públicos e infraestructura escolar.
+              Diseño estratégico de planes anuales, Comunidades Profesionales de Aprendizaje (Moodle), sistema de evaluaciones externas (DIA/SIMCE), gestión normativa e innovación pedagógica.
             </p>
           </div>
 
-          {/* Columna 2: Servicios */}
+          {/* Columna 2: Los 4 Focos */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-yellow-400">
-              Líneas de Servicio
+              4 Focos Principales
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-300">
               <li>
@@ -51,38 +51,52 @@ export function Footer({ setView }: FooterProps) {
                     }}
                     className="cursor-pointer text-left transition-colors hover:text-yellow-400"
                   >
-                    Catálogo de Cursos OTEC (SENCE / SEP)
+                    Foco 1: Liderazgo, CPA y Modelo UTP
                   </button>
                 ) : (
-                  <span>Catálogo de Cursos OTEC (SENCE / SEP)</span>
+                  <span>Foco 1: Liderazgo, CPA y Modelo UTP</span>
                 )}
               </li>
               <li>
                 <a href="#servicios" className="transition-colors hover:text-yellow-400">
-                  Asesoría en Licitaciones y Fondos MINEDUC
+                  Foco 2: Evaluaciones Externas (DIA / SIMCE)
                 </a>
               </li>
               <li>
                 <a href="#servicios" className="transition-colors hover:text-yellow-400">
-                  Proyectos de Infraestructura Escolar
+                  Foco 3: Gestión Normativa (Decreto 67 / RICE)
                 </a>
               </li>
               <li>
-                <a href="#proyectos" className="transition-colors hover:text-yellow-400">
-                  Casos de Éxito en Colegios
+                <a href="#servicios" className="transition-colors hover:text-yellow-400">
+                  Foco 4: Innovación STEM, ABP y Robótica
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Columna 3: Accesos Directos & Moodle */}
+          {/* Columna 3: Módulos y Plataforma por Rol */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest text-yellow-400">
-              Plataforma E-Learning
+              Módulos &amp; Plataforma
             </h4>
-            <p className="mt-4 text-sm text-slate-400">
-              Acceso exclusivo para docentes y equipos directivos con programas activos:
-            </p>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li>
+                <a href="#complementarios" className="transition-colors hover:text-yellow-400">
+                  Aprendizaje Socioemocional y Juego
+                </a>
+              </li>
+              <li>
+                <a href="#complementarios" className="transition-colors hover:text-yellow-400">
+                  Ludotecas, Bibliorecreos y Plan Lector
+                </a>
+              </li>
+              <li>
+                <a href="#complementarios" className="transition-colors hover:text-yellow-400">
+                  Laboratorios (Teatro, Música, Periodismo, STEM)
+                </a>
+              </li>
+            </ul>
             <a
               href={MOODLE_URL}
               target="_blank"
@@ -90,7 +104,7 @@ export function Footer({ setView }: FooterProps) {
               className="mt-4 inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-xs font-bold text-white transition-colors hover:border-yellow-400 hover:text-yellow-400"
             >
               <LogIn className="h-4 w-4 text-yellow-400" />
-              <span>Ingresar a Aula Virtual Moodle</span>
+              <span>Ingresar al Aula Virtual Moodle</span>
               <ExternalLink className="h-3.5 w-3.5 text-slate-400" />
             </a>
           </div>
@@ -103,9 +117,9 @@ export function Footer({ setView }: FooterProps) {
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
               <li>+56 2 2345 6789</li>
               <li>{CONTACT_EMAIL}</li>
-              <li>Av. Providencia 1234, Of. 501, Santiago</li>
+              <li>Santiago, Chile</li>
               <li className="pt-1 text-xs text-slate-400">
-                Cobertura presencial y online en las 16 regiones de Chile.
+                Vinculación con el medio, Consejos Asesores y acompañamiento en todo Chile.
               </li>
             </ul>
           </div>
@@ -113,7 +127,7 @@ export function Footer({ setView }: FooterProps) {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-6 text-xs text-slate-400 sm:flex-row">
           <p>© {new Date().getFullYear()} EducaResponde Chile. Todos los derechos reservados.</p>
-          <p>OTEC Certificada · Proveedor Mercado Público · Aula Virtual Moodle</p>
+          <p>Plataforma CPA Moodle · Sistema SIMCE/DIA · Modelo de Gestión Directiva y UTP</p>
         </div>
       </div>
     </footer>
